@@ -18,7 +18,7 @@ const addNoteHandler = (req, h) => {
 
   if (isSucces) {
     const response = h.response({
-      status: 'success',
+      status: 'Success',
       message: 'Catatan berhasil ditambahkan',
       data: {
         noteId: id,
@@ -29,7 +29,7 @@ const addNoteHandler = (req, h) => {
   }
 
   const response = h.response({
-    status: 'fail',
+    status: 'Fail',
     message: 'Catatan gagal ditambahkan',
   });
 
@@ -38,7 +38,7 @@ const addNoteHandler = (req, h) => {
 };
 
 const getAllNotesHandler = () => ({
-  status: 'success',
+  status: 'Success',
   data: {
     notes,
   },
@@ -51,7 +51,7 @@ const getNoteByIdHandler = (req, h) => {
 
   if (note !== undefined) {
     return {
-      status: 'success',
+      status: 'Success',
       data: {
         note,
       },
@@ -59,7 +59,7 @@ const getNoteByIdHandler = (req, h) => {
   }
 
   const response = h.response({
-    status: 'fail',
+    status: 'Fail',
     message: 'Catatan tidak ditemukan',
   });
 
@@ -86,7 +86,7 @@ const editNoteByIdHandler = (req, h) => {
     };
 
     const successResponse = h.response({
-      status: 'success',
+      status: 'Success',
       message: 'Catatan berhasil diperbarui',
     });
 
@@ -95,7 +95,7 @@ const editNoteByIdHandler = (req, h) => {
   }
 
   const failResponse = h.response({
-    status: 'fail',
+    status: 'Fail',
     message: 'Gagal memperbarui catatan. Id tidak ditemukan',
   });
 
@@ -136,7 +136,7 @@ const deleteNoteByIdHandler = (req, h) => {
   }
 
   const response = h.response({
-    status: 'fail',
+    status: 'Fail',
     message: 'Catatan gagal dihapus. Id tidak ditemukan',
   });
   response.code(404);
